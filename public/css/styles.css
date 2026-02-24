@@ -1,0 +1,367 @@
+* {
+    margin:  0;
+    padding: 0;
+    box-sizing:  border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Camada de fundo para a imagem */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:  100%;
+    background-image: url('./background.jpg'); /* COLOQUE SUA IMAGEM AQUI */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.background-overlay {
+    position:  absolute;
+    top:-50%;
+    left: 0%;
+    height: 100%;
+    background:  linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(30, 30, 30, 0.95) 100%);
+    z-index: 1;
+}
+
+.login-container, .cadastro-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(12px, 3vw, 24px);
+}
+
+.login-box, .cadastro-box {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border:  1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: clamp(22px, 3.6vw, 48px) clamp(18px, 3.6vw, 40px);
+    box-shadow:  0 8px 32px rgba(0, 0, 0, 0.5);
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-section {
+    text-align: center;
+    margin-bottom: clamp(10px, 2.2vw, 26px);
+}
+
+.logo-section h1 {
+    font-size: clamp(18px, 3.8vw, 32px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.tagline {
+    font-size: clamp(8px, 2vw, 13px);
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+}
+
+.login-form, .cadastro-form {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(6px, 1.4vw, 18px);
+    flex: 1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: clamp(12px, 1.8vw, 14px);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.form-group input {
+    width: 100%;
+    padding:  clamp(5px, 1.2vw, 14px) clamp(7px, 1.4vw, 16px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    font-size: clamp(11px, 1.4vw, 15px);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #fff;
+}
+
+.btn-login, .btn-cadastro {
+    width: 100%;
+    padding: clamp(7px, 1.2vw, 14px);
+    background: #fff;
+    color: #000;
+    border:  none;
+    border-radius:  8px;
+    font-size: clamp(11px, 1.4vw, 16px);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+}
+
+.btn-login:hover, .btn-cadastro:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+}
+
+.btn-login:active, .btn-cadastro:active {
+    transform: translateY(0);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: clamp(1px, 0.6vw, 10px) 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.divider span {
+    padding: 0 16px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: clamp(7px, 1.2vw, 14px);
+    background: transparent;
+    color: #fff;
+    border:  1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-size: clamp(11px, 1.4vw, 16px);
+    font-weight: 600;
+    cursor: pointer;
+    transition:  all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:active {
+    transform:  translateY(0);
+}
+
+.login-footer, .cadastro-footer {
+    margin-top: clamp(6px, 1.8vw, 24px);
+    text-align:  center;
+}
+
+.login-footer p, .cadastro-footer p {
+    font-size: clamp(8px, 1.4vw, 12px);
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .login-box, .cadastro-box {
+        padding: 32px 24px;
+    }
+    
+    .logo-section h1 {
+        font-size: 28px;
+    }
+}
+@media (max-width: 768px) {
+    .login-container, .cadastro-container {
+        padding: 10px;
+    }
+
+    .login-box, .cadastro-box {
+        padding: 24px 18px;
+    }
+
+    .logo-section h1 {
+        font-size: 24px;
+    }
+
+    .form-group input {
+        padding: 12px 14px;
+    }
+
+    .btn-login, .btn-cadastro, .btn-secondary {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+/* Ajustes para telas com pouca altura */
+@media (max-height: 750px) {
+    .login-container, .cadastro-container {
+        min-height: 88vh;
+    }
+
+    .login-box, .cadastro-box {
+        padding: clamp(18px, 2.6vw, 32px) clamp(14px, 2.6vw, 28px);
+        max-height: 88vh;
+    }
+
+    .logo-section {
+        margin-bottom: clamp(10px, 2.2vw, 20px);
+    }
+
+    .logo-section h1 {
+        font-size: clamp(20px, 3.6vw, 28px);
+    }
+
+    .tagline {
+        font-size: clamp(9px, 2vw, 12px);
+    }
+
+    .login-form, .cadastro-form {
+        gap: clamp(6px, 1.2vw, 14px);
+    }
+
+    .form-group input {
+        padding: clamp(6px, 1.2vw, 12px) clamp(8px, 1.4vw, 14px);
+        font-size: clamp(11px, 1.4vw, 14px);
+    }
+
+    .btn-login, .btn-cadastro, .btn-secondary {
+        padding: clamp(8px, 1.2vw, 12px);
+        font-size: clamp(11px, 1.4vw, 14px);
+    }
+
+    .divider span {
+        font-size: clamp(10px, 1.4vw, 13px);
+    }
+}
+
+@media (max-height: 620px) {
+    .login-container, .cadastro-container {
+        min-height: 86vh;
+    }
+
+    .login-box, .cadastro-box {
+        padding: clamp(14px, 2.2vw, 24px) clamp(12px, 2.2vw, 20px);
+        max-height: 86vh;
+        border-radius: 12px;
+    }
+
+    .logo-section {
+        margin-bottom: clamp(8px, 1.8vw, 16px);
+    }
+
+    .logo-section h1 {
+        font-size: clamp(18px, 3.2vw, 24px);
+    }
+
+    .tagline {
+        font-size: clamp(9px, 1.8vw, 11px);
+    }
+
+    .login-form, .cadastro-form {
+        gap: clamp(5px, 1vw, 11px);
+    }
+
+    .form-group label {
+        font-size: clamp(11px, 1.8vw, 13px);
+    }
+
+    .form-group input {
+        padding: clamp(6px, 1vw, 10px) clamp(8px, 1.2vw, 12px);
+        font-size: clamp(10px, 1.2vw, 13px);
+        border-radius: 7px;
+    }
+
+    .form-options {
+        font-size: clamp(11px, 1.6vw, 13px);
+    }
+
+    .btn-login, .btn-cadastro, .btn-secondary {
+        padding: clamp(8px, 1vw, 10px);
+        font-size: clamp(11px, 1.3vw, 13px);
+        border-radius: 7px;
+    }
+
+    .divider span {
+        font-size: clamp(9px, 1.2vw, 12px);
+    }
+
+    .login-footer, .cadastro-footer {
+        margin-top: clamp(8px, 1.8vw, 18px);
+    }
+
+    .login-footer p, .cadastro-footer p {
+        font-size: clamp(9px, 1.4vw, 11px);
+    }
+}

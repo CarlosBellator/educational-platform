@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo-section">
+                <h1>EduLearn</h1>
+                <p class="tagline">Plataforma de Educação</p>
+            </div>
+
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="remember">
+                        <span>Lembrar-me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                </div>
+
+                <button type="submit" class="btn-login">Entrar</button>
+
+                <div class="divider">
+                    <span>ou</span>
+                </div>
+                <a href="/cadastro">
+                    <button type="button" class="btn-secondary">Criar nova conta</button>
+                </a>
+            </form>
+            <footer class="login-footer">
+                <p>&copy; <%= ano %> EduLearn. Todos os direitos reservados.</p>
+            </footer>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>

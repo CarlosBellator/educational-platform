@@ -1,0 +1,59 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EduLearn - Login</title>
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body>
+        <div class="background-overlay"> <img src="./images/background.jpg" alt="Plano de Fundo"></div>
+        
+        <div class="login-container">
+            <div class="login-box">
+                <div class="logo-section">
+                    <h1>EduLearn</h1>
+                    <p class="tagline">Plataforma de Educação</p>
+                </div>
+
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="nome" id="nome" name="nome" placeholder="josé" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password-cofirmation">Confirme sua senha</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="remember">
+                            <span>Lembrar-me</span>
+                        </label>
+                        <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                    </div>
+
+                    <button type="submit" class="btn-login">Entrar</button>
+
+                    <div class="divider">
+                        <span>ou</span>
+                    </div>
+
+                    <button type="button" class="btn-secondary">Criar nova conta</button>
+                </form>
+
+                <footer class="login-footer">
+                    <p>&copy; 2025 EduLearn. Todos os direitos reservados.</p>
+                </footer>
+            </div>
+        </div>
+    </body>
+    </html>
